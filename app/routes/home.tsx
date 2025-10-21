@@ -1,13 +1,37 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import Navbar from "~/Components/Navbar";
+import { resumes } from "../../Constants";
+import ResumeCard from "~/Components/ResumeCard";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "ResuCraft" },
+    { name: "Resume Analyzer", content: "ResuCraft – Crafting perfect resumes with AI precision." },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <section className="main-section">
+
+
+      <div className="page-heading ">
+        <Navbar/>
+        <h1> Track Your Application & Resume Ratings</h1>
+        <h2>Analyze your resume using AI, monitor your application progress, and identify areas to boost your hiring
+          potential.</h2>
+
+      </div>
+    </section>
+    {resumes.length>0 &&(
+        <div className="resumes-section">
+          {resumes.map((resume) => (
+
+              <ResumeCard key={resume.id} resume={resume}/>
+
+
+          ))}
+        </div>)}
+  </main>;
 }
