@@ -52,3 +52,4 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
 };
 
 export default ScoreCircle;
+
