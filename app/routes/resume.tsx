@@ -50,7 +50,7 @@ const Resume = () => {
     }, [id]);
 
     return (
-        <main className="!pt-0">
+        <main className="!pt-0 bg-[radial-gradient(circle,rgba(245,211,225,1)_0%,rgba(240,246,252,1)_100%)] sm:mx-2 px-1.5 min-h-screen">
             <nav className="resume-nav">
                 <Link to="/" className="back-button">
                     <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
@@ -73,7 +73,8 @@ const Resume = () => {
                 </section>
                 <section >
                      <section className="feedback-section p-8 flex flex-col gap-8 max-w-3xl w-full max-lg:pt-4 max-lg:px-4">
-                    <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
+                    <h2 className="text-4xl text-blue-500 font-bold  border-b-2 ">Resume Review</h2>
+                    
                     {feedback ? (
                         <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
                             <Summary feedback={feedback} />
